@@ -5,7 +5,7 @@ div.page {
   width: 8.5in;
   display: block;
   padding: .25in;
-  border: $defaultBoarder;
+  border: $defaultBorder;
 }
 
 body {
@@ -62,7 +62,7 @@ section {
 }
 
 .left-border {
-  border-left: $defaultBoarder;
+  border-left: $defaultBorder;
   padding: 0 0.08in;
 }
 
