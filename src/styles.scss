@@ -1,0 +1,90 @@
+@use './vars.scss' as *;
+
+div.page {
+  height: 11in;
+  width: 8.5in;
+  display: block;
+  padding: .25in;
+  border: $defaultBoarder;
+}
+
+body {
+  margin: 0;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   * {
+//     background-color: #23272e;
+//     color: white;
+//     border-color: white !important;
+//   }
+// }
+
+@media print {
+  #view-choices {
+    display: none;
+  }
+
+  div.page {
+    border: none;
+  }
+}
+
+* {
+  font-family: Calibri, sans-serif;
+  font-size: $normalTextSize;
+}
+
+span {
+  font-family: Calibri, sans-serif;
+  font-size: $normalTextSize;
+  white-space: normal;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $sectionGap;
+
+  >* {
+    width: 100%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.left-boarder {
+  border-left: $defaultBoarder;
+  padding: 0 0.08in;
+}
+
+.section-header {
+  font-size: $sectionTextSize;
+  font-weight: bold;
+  margin: 0 0 $sectionHeaderGap 0;
+}
+
+.sub-section-header {
+  font-size: $normalTextSize;
+  font-weight: bold;
+  margin: 0 0 2px 0;
+  padding-right: 4px;
+
+  &.inline {
+    display: inline-block;
+  }
+}
+
+ul {
+  li:not(:last-child) {
+    margin-bottom: $listItemMargin;
+  }
+}

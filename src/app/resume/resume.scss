@@ -1,0 +1,73 @@
+@use '../../vars.scss' as vars;
+
+.list-container {
+  .sub-section-header {
+    &.single-line {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.outer-list {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+
+    ul.inner-list {
+      list-style-type: disc;
+      padding-left: vars.$sectionGap;
+    }
+  }
+}
+
+.job-section {
+  display: flex;
+  flex-direction: column;
+
+  .job-container {
+    display: grid;
+    gap: 4px;
+
+    &:not(:last-child) {
+      margin-bottom: vars.$jobSpacing;
+    }
+  }
+
+  .job-header {
+    margin-bottom: 4px;
+
+    .summary {
+      display: flex;
+      flex-direction: row;
+
+      .title-company {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.fact-section {
+  display: block;
+
+  .facts-container {
+    display: grid;
+    gap: 10px;
+  }
+}
+
+.edu-section {
+  .edu-container {
+    display: flex;
+    flex-direction: row;
+
+    .edu-item {
+      flex: 1;
+    }
+  }
+
+  ul {
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
