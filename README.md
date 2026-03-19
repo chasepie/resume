@@ -3,9 +3,9 @@
 A personal resume and cover letter web application built with Angular.
 
 *But... why an Angular web app and not just a word doc?*
-1. Microsoft word was really annoying to work with for the formatting I wanted
-2. I like source control and wanted to keep my resume in git fffff
-3. I like angular, even though it's very overkill for this use case 😊
+1. Microsoft Word was really annoying to work with for the formatting I wanted
+2. I like source control and wanted to keep my resume in git
+3. I like Angular, even though it's very overkill for this use case 😊
 
 ## Features
 

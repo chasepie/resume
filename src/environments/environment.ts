@@ -1,9 +1,9 @@
 export const environment = {
-  fullName: "Chase Pietrangelo",
-  email: "my@email.com",
-  phone: "555-867-5309",
-  location: "Location, MI",
-  linkedin: "https://linkedin.com/in/chasepietrangelo",
+  fullName: 'Chase Pietrangelo',
+  email: 'my@email.com',
+  phone: '555-867-5309',
+  location: 'Location, MI',
+  linkedin: 'https://linkedin.com/in/chasepietrangelo',
   jobTitle: 'Project Engineer (Software)',
   coverLetter: `Dear Hiring Manager,
 
