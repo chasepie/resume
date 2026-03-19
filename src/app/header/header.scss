@@ -1,0 +1,45 @@
+@use '../../vars.scss' as vars;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: vars.$defaultBorder;
+  padding-bottom: vars.$sectionGap;
+
+  #namePosition {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    #name {
+      font-size: 36pt;
+    }
+
+    #position {
+      font-size: 14pt;
+    }
+  }
+
+  #details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .detail {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      svg {
+        padding-left: 8px;
+        $size: 16px;
+        height: $size;
+        width: $size;
+      }
+    }
+  }
+}
