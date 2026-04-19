@@ -1,0 +1,62 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid black;
+  padding-left: 8px;
+
+  .feat-container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 5px;
+
+    &.split-half {
+      div {
+        max-width: 50%;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 13px;
+    }
+  }
+
+  &.no-left-border {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+
+#technicalSkills {
+  .feat-container {
+    max-height: 160px;
+    row-gap: 0;
+
+    h3 {
+      display: inline;
+    }
+  }
+}
+
+#experience {
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#education {
+  .feat-container {
+    max-height: 70px;
+  }
+}

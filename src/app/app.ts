@@ -11,13 +11,6 @@ import { Header } from './header/header';
     <hr />
     <router-outlet></router-outlet>
   </div>
-  <!-- <router-outlet></router-outlet> -->
   `,
-  // styles: [
-  //   `:host {
-  //     display: flex;
-  //     justify-content: center;
-  //   }`
-  // ]
 })
 export class App { }

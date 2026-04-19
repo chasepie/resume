@@ -1,7 +1,6 @@
 @use './vars.scss' as *;
 
 $pageMargin: .25in;
-$sectionGap: 8px;
 
 * {
   font-family: Calibri, sans-serif;
@@ -37,12 +36,6 @@ body {
   margin: 0;
 }
 
-app-resume {
-  display: flex;
-  flex-direction: column;
-  row-gap: $sectionGap;
-}
-
 app-root {
   display: flex;
   justify-content: center;
@@ -62,17 +55,31 @@ app-root {
 
   hr {
     border-color: black;
-    margin: $sectionGap 0;
+    margin: 8px 0;
   }
 }
 
+// Applies styles to the page box when printing
 @page {
+  // Define margin of each printed page
   margin: $pageMargin;
 }
 
+// Applies styles only when the page is being printed - overrides the default screen styles during printing.
 @media print {
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    display: block;
+    width: auto;
+  }
+
   app-root {
     border: none;
+    width: 100%;
+    height: 100%;
 
     .page-contents {
       width: 100%;
@@ -81,65 +88,17 @@ app-root {
   }
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  border-left: 2px solid black;
-  padding-left: 8px;
-
-  .feat-container {
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    flex-wrap: wrap;
-    row-gap: 5px;
-
-    &.split-half {
-      div {
-        max-width: 50%;
-      }
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 13px;
-    }
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
   }
 
-  &.no-left-border {
-    border-left: none;
-    padding-left: 0;
+  app-root {
+    background-color: #23272e;
+  }
+
+  * {
+    border-color: white !important;
+    color: white;
   }
 }
-
-#technicalSkills {
-  .feat-container {
-    max-height: 160px;
-    row-gap: 0;
-
-    h3 {
-      display: inline;
-    }
-  }
-}
-
-#experience {
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-#education {
-  .feat-container {
-    max-height: 70px;
-  }
-}
-
-// @media (prefers-color-scheme: dark) {
-//   * {
-//     background-color: #23272e;
-//     color: white;
-//     border-color: white !important;
-//   }
-// }
