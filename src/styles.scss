@@ -14,15 +14,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 36pt;
 }
 
 h2 {
-  font-size: 16px;
+  font-size: 12pt;
 }
 
 h3, li, span {
-  font-size: 13.3333px;
+  font-size: 10pt;
+}
+
+// Remove default list styles and add custom bullet points so rendering
+// is consistent across browsers and when printed to PDF
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+
+  li {
+    padding-left: 12px;
+    position: relative;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: -0.75px;
+      top: -1.50px;
+      font-size: 13.5pt;
+    }
+  }
 }
 
 body {
@@ -42,6 +64,7 @@ app-root {
   width: 8.5in;
   height: 11in;
   border: 2px solid black;
+  margin: 10px 0;
 }
 
 .page-contents {
@@ -59,6 +82,7 @@ app-root {
 
 // Applies styles to the page box when printing
 @page {
+  size: letter portrait;
   // Define margin of each printed page
   margin: $pageMargin;
 }
@@ -78,6 +102,7 @@ app-root {
     border: none;
     width: 100%;
     height: 100%;
+    margin: 0;
 
     .page-contents {
       width: 100%;
