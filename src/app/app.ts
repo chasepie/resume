@@ -8,7 +8,7 @@ import { Header } from './header/header';
   template: `
   <div class="page-contents">
     <app-header></app-header>
-    <hr />
+    <div class="divider"></div>
     <router-outlet></router-outlet>
   </div>
   `,

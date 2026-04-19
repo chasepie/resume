@@ -67,47 +67,45 @@ app-root {
   margin: 10px 0;
 }
 
+div.divider {
+  width: 100%;
+  margin: 8px 0;
+  border-top: 2px solid black;
+}
+
 .page-contents {
   width: calc(100% - #{$pageMargin} * 2);
   height: calc(100% - #{$pageMargin} * 2);
 
   display: flex;
   flex-direction: column;
-
-  hr {
-    border-color: black;
-    margin: 8px 0;
-  }
 }
 
 // Applies styles to the page box when printing
 @page {
   size: letter portrait;
-  // Define margin of each printed page
-  margin: $pageMargin;
+  // Zero out browser/dialog margins so app-root controls all spacing
+  margin: 0;
 }
 
 // Applies styles only when the page is being printed - overrides the default screen styles during printing.
 @media print {
   html, body {
-    height: 100%;
+    height: 11in;
   }
 
   body {
     display: block;
-    width: auto;
+    width: 8.5in;
   }
 
   app-root {
     border: none;
-    width: 100%;
-    height: 100%;
+    // Use explicit paper dimensions rather than 100% so the layout is
+    // independent of whatever margin Safari's print dialog applies.
+    width: 8.5in;
+    height: 11in;
     margin: 0;
-
-    .page-contents {
-      width: 100%;
-      height: 100%;
-    }
   }
 }
 
