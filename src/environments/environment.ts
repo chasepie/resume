@@ -3,7 +3,7 @@ export const environment = {
   email: 'my@email.com',
   phone: '555-867-5309',
   location: 'Location, MI',
-  linkedin: 'https://linkedin.com/in/chasepietrangelo',
+  github: 'github.com/chasepie',
   jobTitle: 'Project Engineer (Software)',
   coverLetter: `Dear Hiring Manager,
 

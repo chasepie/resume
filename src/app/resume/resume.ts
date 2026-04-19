@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Header } from '../header/header';
 
 @Component({
   selector: 'app-resume',
-  imports: [Header],
   templateUrl: './resume.html',
   styleUrl: './resume.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

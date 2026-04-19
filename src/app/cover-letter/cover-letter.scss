@@ -1,10 +1,4 @@
-@use '../../vars.scss' as vars;
-
-.letter {
-  margin-top: 8px;
-
-  pre {
-    font-size: 18px;
-    white-space: pre-line;
-  }
+span {
+  font-size: 18px;
+  white-space: pre-line;
 }

@@ -1,10 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { Header } from '../header/header';
 
 @Component({
   selector: 'app-cover-letter',
-  imports: [Header],
   templateUrl: './cover-letter.html',
   styleUrl: './cover-letter.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

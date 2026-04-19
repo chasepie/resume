@@ -35,7 +35,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/feather-icons/dist/feather.js"
+              "node_modules/feather-icons/dist/feather.min.js"
             ],
             "allowedCommonJsDependencies": [
               "feather-icons"
