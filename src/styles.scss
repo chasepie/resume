@@ -1,15 +1,139 @@
 @use './vars.scss' as *;
 
-div.page {
-  height: 11in;
-  width: 8.5in;
-  display: block;
-  padding: .25in;
-  border: $defaultBorder;
+$pageMargin: .25in;
+$sectionGap: 8px;
+
+* {
+  font-family: Calibri, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+
+  span {
+    font-weight: normal;
+    font-size: inherit;
+  }
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3, li, span {
+  font-size: 13.3333px;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
   margin: 0;
+}
+
+app-resume {
+  display: flex;
+  flex-direction: column;
+  row-gap: $sectionGap;
+}
+
+app-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 8.5in;
+  height: 11in;
+  border: 2px solid black;
+}
+
+.page-contents {
+  width: calc(100% - #{$pageMargin} * 2);
+  height: calc(100% - #{$pageMargin} * 2);
+
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    border-color: black;
+    margin: $sectionGap 0;
+  }
+}
+
+@page {
+  margin: $pageMargin;
+}
+
+@media print {
+  app-root {
+    border: none;
+
+    .page-contents {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid black;
+  padding-left: 8px;
+
+  .feat-container {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 5px;
+
+    &.split-half {
+      div {
+        max-width: 50%;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 13px;
+    }
+  }
+
+  &.no-left-border {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+#technicalSkills {
+  .feat-container {
+    max-height: 160px;
+    row-gap: 0;
+
+    h3 {
+      display: inline;
+    }
+  }
+}
+
+#experience {
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#education {
+  .feat-container {
+    max-height: 70px;
+  }
 }
 
 // @media (prefers-color-scheme: dark) {
@@ -19,72 +143,3 @@ body {
 //     border-color: white !important;
 //   }
 // }
-
-@media print {
-  #view-choices {
-    display: none;
-  }
-
-  div.page {
-    border: none;
-  }
-}
-
-* {
-  font-family: Calibri, sans-serif;
-  font-size: $normalTextSize;
-}
-
-span {
-  font-family: Calibri, sans-serif;
-  font-size: $normalTextSize;
-  white-space: normal;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
-section {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: $sectionGap;
-
-  >* {
-    width: 100%;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.left-border {
-  border-left: $defaultBorder;
-  padding: 0 0.08in;
-}
-
-.section-header {
-  font-size: $sectionTextSize;
-  font-weight: bold;
-  margin: 0 0 $sectionHeaderGap 0;
-}
-
-.sub-section-header {
-  font-size: $normalTextSize;
-  font-weight: bold;
-  margin: 0 0 2px 0;
-  padding-right: 4px;
-
-  &.inline {
-    display: inline-block;
-  }
-}
-
-ul {
-  li:not(:last-child) {
-    margin-bottom: $listItemMargin;
-  }
-}

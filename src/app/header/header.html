@@ -1,24 +1,22 @@
-<div class="header">
-  <div id="namePosition">
-    <span id="name">{{ this.fullName }}</span>
-    <span id="position">{{ this.jobTitle }}</span>
+<div id="namePosition">
+  <h1 id="name">{{ this.fullName }}</h1>
+  <span id="position">{{ this.jobTitle }}</span>
+</div>
+<div id="details">
+  <div>
+    <span>{{ this.location }}</span>
+    <i data-feather="map-pin" aria-hidden="true"></i>
   </div>
-  <div id="details">
-    <div class="detail">
-      <span>{{ this.location }}</span>
-      <i data-feather="map-pin" aria-hidden="true"></i>
-    </div>
-    <div class="detail">
-      <span>{{ this.phone }}</span>
-      <i data-feather="phone" aria-hidden="true"></i>
-    </div>
-    <div class="detail">
-      <span>{{ this.email }}</span>
-      <i data-feather="mail" aria-hidden="true"></i>
-    </div>
-    <div class="detail">
-      <span>{{ this.linkedin }}</span>
-      <i data-feather="linkedin" aria-hidden="true"></i>
-    </div>
+  <div>
+    <span>{{ this.phone }}</span>
+    <i data-feather="phone" aria-hidden="true"></i>
+  </div>
+  <div>
+    <span>{{ this.email }}</span>
+    <i data-feather="mail" aria-hidden="true"></i>
+  </div>
+  <div>
+    <span>{{ this.linkedin }}</span>
+    <i data-feather="linkedin" aria-hidden="true"></i>
   </div>
 </div>

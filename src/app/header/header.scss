@@ -1,45 +1,37 @@
-@use '../../vars.scss' as vars;
-
-.header {
+:host {
   display: flex;
   flex-direction: row;
-  border-bottom: vars.$defaultBorder;
-  padding-bottom: vars.$sectionGap;
+}
 
-  #namePosition {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+#namePosition, #details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-    #name {
-      font-size: 36pt;
-    }
+#namePosition {
+  flex: 1;
 
-    #position {
-      font-size: 14pt;
-    }
+  #name {
+    font-weight: normal;
   }
 
-  #details {
+  #position {
+    font-size: 19px;
+  }
+}
+
+#details {
+  div {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
 
-    .detail {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      svg {
-        padding-left: 8px;
-        $size: 16px;
-        height: $size;
-        width: $size;
-      }
+    svg {
+      padding-left: 8px;
+      height: 16px;
+      width: 16px;
     }
   }
 }
