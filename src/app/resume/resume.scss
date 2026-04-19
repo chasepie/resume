@@ -1,73 +1,55 @@
-@use '../../vars.scss' as vars;
-
-.list-container {
-  .sub-section-header {
-    &.single-line {
-      margin-bottom: 0;
-    }
-  }
-
-  ul.outer-list {
-    margin: 0;
-    list-style: none;
-    padding-left: 0;
-
-    ul.inner-list {
-      list-style-type: disc;
-      padding-left: vars.$sectionGap;
-    }
-  }
-}
-
-.job-section {
+:host {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
 
-  .job-container {
-    display: grid;
-    gap: 4px;
+section {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid black;
+  padding-left: 8px;
 
-    &:not(:last-child) {
-      margin-bottom: vars.$jobSpacing;
-    }
-  }
+  .feat-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 5px;
 
-  .job-header {
-    margin-bottom: 4px;
-
-    .summary {
-      display: flex;
-      flex-direction: row;
-
-      .title-company {
-        flex: 1;
+    &.split-half {
+      div {
+        max-width: 50%;
       }
     }
   }
-}
 
-.fact-section {
-  display: block;
-
-  .facts-container {
-    display: grid;
-    gap: 10px;
+  &.no-left-border {
+    border-left: none;
+    padding-left: 0;
   }
 }
 
-.edu-section {
-  .edu-container {
-    display: flex;
-    flex-direction: row;
 
-    .edu-item {
-      flex: 1;
+#technicalSkills {
+  .feat-container {
+    row-gap: 0;
+
+    h3 {
+      display: inline;
     }
   }
+}
 
-  ul {
-    margin: 0;
-    list-style-type: none;
-    padding-left: 0;
+#experience {
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+#education {
+  .feat-container {
+    max-height: 70px;
   }
 }

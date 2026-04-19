@@ -4,7 +4,6 @@ import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,7 +14,7 @@ export class Header implements AfterViewInit {
   protected readonly location = environment.location;
   protected readonly phone = environment.phone;
   protected readonly email = environment.email;
-  protected readonly linkedin = environment.linkedin;
+  protected readonly github = environment.github;
 
   public ngAfterViewInit(): void {
     replace();

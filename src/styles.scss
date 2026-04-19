@@ -1,90 +1,125 @@
-@use './vars.scss' as *;
-
-div.page {
-  height: 11in;
-  width: 8.5in;
-  display: block;
-  padding: .25in;
-  border: $defaultBorder;
-}
-
-body {
-  margin: 0;
-}
-
-// @media (prefers-color-scheme: dark) {
-//   * {
-//     background-color: #23272e;
-//     color: white;
-//     border-color: white !important;
-//   }
-// }
-
-@media print {
-  #view-choices {
-    display: none;
-  }
-
-  div.page {
-    border: none;
-  }
-}
+$pageMargin: .25in;
 
 * {
   font-family: Calibri, sans-serif;
-  font-size: $normalTextSize;
 }
 
-span {
-  font-family: Calibri, sans-serif;
-  font-size: $normalTextSize;
-  white-space: normal;
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+
+  span {
+    font-weight: normal;
+    font-size: inherit;
+  }
 }
 
-h1,
-h2,
-h3 {
+h1 {
+  font-size: 36pt;
+}
+
+h2 {
+  font-size: 12pt;
+}
+
+h3, li, span {
+  font-size: 10pt;
+}
+
+// Remove default list styles and add custom bullet points so rendering
+// is consistent across browsers and when printed to PDF
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+
+  li {
+    padding-left: 12px;
+    position: relative;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: -0.75px;
+      top: -1.50px;
+      font-size: 13.5pt;
+    }
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
   margin: 0;
 }
 
-section {
+app-root {
   display: flex;
-  flex-direction: row;
-  margin-bottom: $sectionGap;
+  justify-content: center;
+  align-items: center;
 
-  >* {
-    width: 100%;
+  width: 8.5in;
+  height: 11in;
+  border: 2px solid black;
+  margin: 10px 0;
+}
+
+div.divider {
+  width: 100%;
+  margin: 8px 0;
+  border-top: 2px solid black;
+}
+
+.page-contents {
+  width: calc(100% - #{$pageMargin} * 2);
+  height: calc(100% - #{$pageMargin} * 2);
+
+  display: flex;
+  flex-direction: column;
+}
+
+// Applies styles to the page box when printing
+@page {
+  size: letter portrait;
+  // Zero out browser/dialog margins so app-root controls all spacing
+  margin: 0;
+}
+
+// Applies styles only when the page is being printed - overrides the default screen styles during printing.
+@media print {
+  html, body {
+    height: 11in;
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  body {
+    display: block;
+    width: 8.5in;
+  }
+
+  app-root {
+    border: none;
+    // Use explicit paper dimensions rather than 100% so the layout is
+    // independent of whatever margin Safari's print dialog applies.
+    width: 8.5in;
+    height: 11in;
+    margin: 0;
   }
 }
 
-.left-border {
-  border-left: $defaultBorder;
-  padding: 0 0.08in;
-}
-
-.section-header {
-  font-size: $sectionTextSize;
-  font-weight: bold;
-  margin: 0 0 $sectionHeaderGap 0;
-}
-
-.sub-section-header {
-  font-size: $normalTextSize;
-  font-weight: bold;
-  margin: 0 0 2px 0;
-  padding-right: 4px;
-
-  &.inline {
-    display: inline-block;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
   }
-}
 
-ul {
-  li:not(:last-child) {
-    margin-bottom: $listItemMargin;
+  app-root {
+    background-color: #23272e;
+  }
+
+  app-root * {
+    border-color: white !important;
+    color: white;
   }
 }
