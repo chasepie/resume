@@ -49,7 +49,7 @@ export const environment = {
   email: 'you@example.com',
   phone: '555-555-5555',
   location: 'City, ST',
-  linkedin: 'https://linkedin.com/in/yourprofile',
+  github: 'https://github.com/yourusername',
   jobTitle: 'Your Job Title',
   coverLetter: `Dear Hiring Manager, ...`,
 };
@@ -74,8 +74,10 @@ Navigate to `http://localhost:4200`. The app will auto-reload on file changes.
 
 ## Scripts
 
-| Command         | Description                       |
-| --------------- | --------------------------------- |
-| `npm start`     | Start the dev server              |
-| `npm run build` | Production build                  |
-| `npm run watch` | Build in watch mode (development) |
+| Command                  | Description                       |
+| ------------------------ | --------------------------------- |
+| `npm start`              | Start the dev server              |
+| `npm run build`          | Production build                  |
+| `npm run build:prod`     | Production build (explicit)       |
+| `npm run build:gh-pages` | Production build for GitHub Pages |
+| `npm run watch`          | Build in watch mode (development) |
